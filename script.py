@@ -68,3 +68,7 @@ try:
                 t=datetime.datetime.now()
                 sleeptime=60-t.second
                 time.sleep(sleeptime)
+except Exception as e:
+    f.close()
+    ser.close()
+    print("Error")
