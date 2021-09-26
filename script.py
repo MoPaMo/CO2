@@ -3,9 +3,7 @@ import serial, os, time, sys, datetime, csv
 def logfilename():
     now = datetime.datetime.now()
     #Colon is not alowed in filenames so we have to include a lookalike char 
-    return 'CO2LOG-%0.4d-%0.2d-%0.2d-%0.2d%s%0.2d%s%0.2d.csv' % 
-            (now.year, now.month, now.day, now.hour,
-            u'ua789',now.minute, u'ua789', now.second)
+    return 'CO2LOG-%0.4d-%0.2d-%0.2d-%0.2d%s%0.2d%s%0.2d.csv' % (now.year, now.month, now.day, now.hour, u'ua789',now.minute, u'ua789', now.second)
 
 #Function to calculate MH-Z19 crc according to datasheet
 
