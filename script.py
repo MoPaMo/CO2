@@ -56,7 +56,7 @@ try:
                     sys.stderr.write('CRC error calculated %d bytes= %d:%d:%d:%d:%d:%d:%d:%d crc= %dn' % (crc, z[0],z[1],z[2],z[3],z[4],z[5],z[6],z[7],z[8]))
                 else:       
                     if s[0] == "xff" and s[1] == "x86":
-                        print "co2=", ord(s[2])*256 + ord(s[3])
+                        print( "co2=", ord(s[2])*256 + ord(s[3]))
                 co2value=ord(s[2])*256 + ord(s[3])
                 now=time.ctime()
                 parsed=time.strptime(now)
@@ -68,11 +68,3 @@ try:
                 t=datetime.datetime.now()
                 sleeptime=60-t.second
                 time.sleep(sleeptime)
-except Exception as e:
-    f.close()
-    ser.close()
-    sys.stderr.write('Error reading serial port %s: %sn' % (type(e).__name__, e))
-except KeyboardInterrupt as e:
-    f.close()
-    ser.close()
-    sys.stderr.write('nCtrl+C pressed, exiting log of %s to %sn' % (port, outfname))
