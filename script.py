@@ -69,6 +69,4 @@ try:
                 sleeptime=60-t.second
                 time.sleep(sleeptime)
 except Exception as e:
-    f.close()
-    ser.close()
-    print("Error")
+    print("Error",e)
